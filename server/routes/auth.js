@@ -9,9 +9,7 @@ var router = express.Router();
 /* LOGIN */
 router.post('/api/login', async function(req, res, next) {
     const { username, password } = req.body;
-    console.log(username, password)
     const data = await runQuery(`SELECT * FROM admin WHERE Email = "${username}" AND Password = "${password}"`);
-    console.log(data)
     if (data) {
         const accessToken = jwt.sign({ username: data[0].username, role: 1 }, accessTokenSecret, { expiresIn: '20m' });
         const refreshToken = jwt.sign({ username: data[0].username, role: 1 }, refreshTokenSecret);

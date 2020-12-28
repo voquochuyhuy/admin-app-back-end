@@ -34,13 +34,11 @@ router.post('/api/login', /*#__PURE__*/function () {
         switch (_context.prev = _context.next) {
           case 0:
             _req$body = req.body, username = _req$body.username, password = _req$body.password;
-            console.log(username, password);
-            _context.next = 4;
+            _context.next = 3;
             return (0, _databaseConnection["default"])("SELECT * FROM admin WHERE Email = \"".concat(username, "\" AND Password = \"").concat(password, "\""));
 
-          case 4:
+          case 3:
             data = _context.sent;
-            console.log(data);
 
             if (data) {
               accessToken = _jsonwebtoken["default"].sign({
@@ -68,7 +66,7 @@ router.post('/api/login', /*#__PURE__*/function () {
               res.status(500);
             }
 
-          case 7:
+          case 5:
           case "end":
             return _context.stop();
         }

@@ -28,7 +28,6 @@ var runQuery = /*#__PURE__*/function () {
           case 0:
             return _context.abrupt("return", new Promise(function (resolve, reject) {
               connection.query(query, function (err, rows, fields) {
-                console.log(err);
                 resolve(rows);
               });
             }));
