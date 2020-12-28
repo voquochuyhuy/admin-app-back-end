@@ -14,10 +14,10 @@ router.get("/api", async function (req, res, next) {
 
 /* CREATE LOG */
 router.post("/api/", async function (req, res, next) {
-  const { typeId, userId,action } = req.body;
-  if(!typeId || !userId) res.status(400);
-  const CreationDate = moment(new Date()).format('YYYY-MM-DD hh-mm-ss');
-  const queryString = `insert into Log values (${userId},${action},'${CreationDate})`;
+  const {  userId,action } = req.body;
+  if(!userId) res.status(400);
+  const CreationDate = moment(new Date()).format('YYYY-MM-DD hh:mm:ss');
+  const queryString = `insert into log values (${userId},${action},'${CreationDate})`;
   const data = await runQuery(queryString);
   if (data) res.send({ data: data });
   else {

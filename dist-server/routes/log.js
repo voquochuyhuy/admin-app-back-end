@@ -57,16 +57,16 @@ router.get("/api", /*#__PURE__*/function () {
 
 router.post("/api/", /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(req, res, next) {
-    var _req$body, typeId, userId, action, CreationDate, queryString, data;
+    var _req$body, userId, action, CreationDate, queryString, data;
 
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            _req$body = req.body, typeId = _req$body.typeId, userId = _req$body.userId, action = _req$body.action;
-            if (!typeId || !userId) res.status(400);
-            CreationDate = (0, _moment["default"])(new Date()).format('YYYY-MM-DD hh-mm-ss');
-            queryString = "insert into Log values (".concat(userId, ",").concat(action, ",'").concat(CreationDate, ")");
+            _req$body = req.body, userId = _req$body.userId, action = _req$body.action;
+            if (!userId) res.status(400);
+            CreationDate = (0, _moment["default"])(new Date()).format('YYYY-MM-DD hh:mm:ss');
+            queryString = "insert into log values (".concat(userId, ",").concat(action, ",'").concat(CreationDate, ")");
             _context2.next = 6;
             return (0, _databaseConnection["default"])(queryString);
 
