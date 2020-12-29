@@ -16,7 +16,7 @@
     ]
   },
   "scripts": {
-    "start": "node ./server/bin/www",
+    "start": "npm run prod",
     "server": "node ./dist-server/bin/www",
     "transpile": "babel ./server --out-dir dist-server",
     "clean": "rimraf dist-server",
