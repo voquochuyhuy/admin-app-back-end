@@ -22,7 +22,7 @@
     "clean": "rimraf dist-server",
     "build": "npm-run-all clean transpile",
     "dev": "cross-env NODE_ENV=development npm-run-all build server",
-    "prod": "cross-env NODE_ENV=production npm-run-all build server",
+    "prod": "NODE_ENV=production npm-run-all build server",
     "watch:dev": "nodemon"
   },
   "dependencies": {
