@@ -1,6 +1,6 @@
 import { async } from 'regenerator-runtime';
+import mysql from 'mysql';
 
-var mysql = require('mysql')
 var connection = mysql.createConnection({
   host: 'db4free.net',
   user: 'voquochuy798',
